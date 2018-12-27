@@ -11,8 +11,6 @@ namespace IncreasingTestabilityStepByStep
             string[] words = text.Split(' ');
             int n = words.Length;
             Console.WriteLine($"Number of words: {n}");
-
-            //Console.ReadKey();
         }
     }
 }
