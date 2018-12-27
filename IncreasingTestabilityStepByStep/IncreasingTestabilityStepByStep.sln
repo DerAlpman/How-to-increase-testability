@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreasingTestabilityStepByStep", "IncreasingTestabilityStepByStep\IncreasingTestabilityStepByStep.csproj", "{0455EB66-57D8-4211-92DF-79AF7053B44B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncreasingTestabilityStepByStepTests", "IncreasingTestabilityStepByStepTests\IncreasingTestabilityStepByStepTests.csproj", "{30FA51E3-53B0-4814-B2E7-EB731BD20EA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0455EB66-57D8-4211-92DF-79AF7053B44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0455EB66-57D8-4211-92DF-79AF7053B44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0455EB66-57D8-4211-92DF-79AF7053B44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30FA51E3-53B0-4814-B2E7-EB731BD20EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30FA51E3-53B0-4814-B2E7-EB731BD20EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30FA51E3-53B0-4814-B2E7-EB731BD20EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30FA51E3-53B0-4814-B2E7-EB731BD20EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
