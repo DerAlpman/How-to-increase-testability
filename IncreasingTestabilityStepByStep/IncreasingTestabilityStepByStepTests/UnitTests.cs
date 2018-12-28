@@ -22,7 +22,7 @@ namespace IncreasingTestabilityStepByStepTests
         }
 
         [TestMethod]
-        public void TestDomain()
+        public void TestDomainLogic()
         {
             var result = Program.CountWords("Mary had a little lamb");
             Assert.AreEqual(5, result);
