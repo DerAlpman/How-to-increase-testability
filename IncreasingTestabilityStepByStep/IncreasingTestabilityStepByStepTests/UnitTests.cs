@@ -34,5 +34,19 @@ namespace IncreasingTestabilityStepByStepTests
             var result = Program.CountWords(" Mary had  a little  lamb ");
             Assert.AreEqual(5, result);
         }
+
+        [TestMethod]
+        public void TestSplittingOfText()
+        {
+            var result = Program.SplitByWhitespace(" Mary had  a little  lamb ");
+            Assert.AreEqual(new[] { "Mary", "had", "a", "little", "lamb" }.Length, result.Length);
+        }
+
+        [TestMethod]
+        public void TestCountingOfWords()
+        {
+            var result = Program.CountWords(new[] { "Mary", "had", "a", "little", "lamb" });
+            Assert.AreEqual(5, result);
+        }
     }
 }

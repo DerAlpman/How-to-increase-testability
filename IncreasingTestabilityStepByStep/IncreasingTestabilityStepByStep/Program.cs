@@ -13,9 +13,18 @@ namespace IncreasingTestabilityStepByStep
 
         public static int CountWords(string text)
         {
-            string[] words = text.Split(' ');
-            int n = words.Length;
-            return n;
+            string[] words = SplitByWhitespace(text);
+            return CountWords(words);
+        }
+
+        public static int CountWords(string[] words)
+        {
+            return words.Length;
+        }
+
+        public static string[] SplitByWhitespace(string text)
+        {
+            return text.Split(' ');
         }
 
         public static void DisplayWordCount(int n)
