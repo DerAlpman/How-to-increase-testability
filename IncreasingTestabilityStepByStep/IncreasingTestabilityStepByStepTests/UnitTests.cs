@@ -8,6 +8,9 @@ namespace IncreasingTestabilityStepByStepTests
     [TestClass]
     public class UnitTests
     {
+        /// <summary>
+        /// <para>Ugly acceptance test</para>
+        /// </summary>
         [TestMethod]
         public void TestMain()
         {
@@ -21,6 +24,9 @@ namespace IncreasingTestabilityStepByStepTests
             Assert.AreEqual("Enter text:Number of words: 5\r\n", output.ToString());
         }
 
+        /// <summary>
+        /// <para>Acceptance test</para>
+        /// </summary>
         [TestMethod]
         public void TestDomainLogic()
         {
@@ -28,6 +34,9 @@ namespace IncreasingTestabilityStepByStepTests
             Assert.AreEqual(5, result);
         }
 
+        /// <summary>
+        /// <para>Acceptance test</para>
+        /// </summary>
         [TestMethod]
         public void TestDomainLogicWithMultipleWhitespaces()
         {
@@ -35,18 +44,26 @@ namespace IncreasingTestabilityStepByStepTests
             Assert.AreEqual(5, result);
         }
 
+        /// <summary>
+        /// <para>Scaffolding test</para>
+        /// </summary>
         [TestMethod]
         public void TestSplittingOfText()
         {
+            var expected = new[] { "Mary", "had", "a", "little", "lamb" };
             var result = Program.SplitByWhitespace(" Mary had  a little  lamb ");
-            Assert.AreEqual(new[] { "Mary", "had", "a", "little", "lamb" }.Length, result.Length);
+            Assert.AreEqual(expected.Length, result.Length);
         }
 
+        /// <summary>
+        /// <para>Scaffolding test</para>
+        /// </summary>
         [TestMethod]
         public void TestCountingOfWords()
         {
+            var expected = new[] { "Mary", "had", "a", "little", "lamb" };
             var result = Program.CountWords(new[] { "Mary", "had", "a", "little", "lamb" });
-            Assert.AreEqual(5, result);
+            Assert.AreEqual(expected.Length, result);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace IncreasingTestabilityStepByStep
 
         public static string[] SplitByWhitespace(string text)
         {
-            return text.Split(' ');
+            return text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public static void DisplayWordCount(int n)
