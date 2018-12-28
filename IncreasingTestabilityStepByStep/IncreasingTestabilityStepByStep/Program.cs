@@ -7,9 +7,15 @@ namespace IncreasingTestabilityStepByStep
         public static void Main(string[] args)
         {
             string text = AskForText();
+            int n = CountWords(text);
+            DisplayWordCount(n);
+        }
+
+        public static int CountWords(string text)
+        {
             string[] words = text.Split(' ');
             int n = words.Length;
-            DisplayWordCount(n);
+            return n;
         }
 
         public static void DisplayWordCount(int n)

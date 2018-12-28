@@ -20,5 +20,12 @@ namespace IncreasingTestabilityStepByStepTests
 
             Assert.AreEqual("Enter text:Number of words: 5\r\n", output.ToString());
         }
+
+        [TestMethod]
+        public void TestDomain()
+        {
+            var result = Program.CountWords("Mary had a little lamb");
+            Assert.AreEqual(5, result);
+        }
     }
 }
