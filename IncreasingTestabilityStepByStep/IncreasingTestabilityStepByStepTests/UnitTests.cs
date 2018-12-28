@@ -65,5 +65,15 @@ namespace IncreasingTestabilityStepByStepTests
             var result = Program.CountWords(new[] { "Mary", "had", "a", "little", "lamb" });
             Assert.AreEqual(expected.Length, result);
         }
+
+        /// <summary>
+        /// <para>Acceptance test</para>
+        /// </summary>
+        [TestMethod]
+        public void TestCountingOfWordsWithStopwords()
+        {
+            var result = Program.CountWords(new[] { "hello", "the", "world", "of" });
+            Assert.AreEqual(2, result);
+        }
     }
 }
