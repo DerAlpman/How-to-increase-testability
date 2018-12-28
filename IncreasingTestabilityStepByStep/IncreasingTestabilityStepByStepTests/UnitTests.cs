@@ -27,5 +27,12 @@ namespace IncreasingTestabilityStepByStepTests
             var result = Program.CountWords("Mary had a little lamb");
             Assert.AreEqual(5, result);
         }
+
+        [TestMethod]
+        public void TestDomainLogicWithMultipleWhitespaces()
+        {
+            var result = Program.CountWords(" Mary had  a little  lamb ");
+            Assert.AreEqual(5, result);
+        }
     }
 }
