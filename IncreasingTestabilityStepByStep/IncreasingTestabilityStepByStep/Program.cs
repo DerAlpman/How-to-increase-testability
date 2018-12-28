@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 
 namespace IncreasingTestabilityStepByStep
 {
@@ -19,7 +21,10 @@ namespace IncreasingTestabilityStepByStep
 
         public static int CountWords(string[] words)
         {
-            return words.Length;
+            var stopwords = File.ReadAllLines("stopwords.txt");
+            words = words.Except(stopwords).ToArray();
+            int n = words.Length;
+            return n;
         }
 
         public static string[] SplitByWhitespace(string text)

@@ -72,7 +72,7 @@ namespace IncreasingTestabilityStepByStepTests
         [TestMethod]
         public void TestCountingOfWordsWithStopwords()
         {
-            var result = Program.CountWords(new[] { "hello", "the", "world", "of" });
+            var result = Program.CountWords(new[] { "hello", "the", "world", "off" });
             Assert.AreEqual(2, result);
         }
     }
