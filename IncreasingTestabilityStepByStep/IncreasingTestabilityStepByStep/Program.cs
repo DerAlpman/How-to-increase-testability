@@ -21,7 +21,8 @@ namespace IncreasingTestabilityStepByStep
 
         public static int CountWords(string[] words)
         {
-            var stopwords = File.ReadAllLines("stopwords.txt");
+            StopwordsProvider stopwordsProvider = new StopwordsProvider();
+            var stopwords = stopwordsProvider.Load();
             words = words.Except(stopwords).ToArray();
             int n = words.Length;
             return n;
@@ -42,11 +43,6 @@ namespace IncreasingTestabilityStepByStep
             Console.Write($"Enter text:");
             string text = Console.ReadLine();
             return text;
-        }
-
-        public static string[] LoadStopwords()
-        {
-            return File.ReadAllLines("stopwords.txt");
         }
     }
 }
