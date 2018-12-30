@@ -1,8 +1,12 @@
 ﻿using System.IO;
+using IncreasingTestabilityStepByStep.Interfaces;
 
 namespace IncreasingTestabilityStepByStep
 {
-    public class StopwordsProvider
+    /// <summary>
+    /// Class to provide stopwords.
+    /// </summary>
+    public class StopwordsProvider : IStopwordsProvider
     {
         #region FIELDS
 
@@ -23,6 +27,10 @@ namespace IncreasingTestabilityStepByStep
 
         #region METHODS
 
+        /// <summary>
+        /// <see cref="IStopwordsProvider.Load()"/>
+        /// </summary>
+        /// <returns></returns>
         public string[] Load()
         {
             if (!File.Exists(this._Filename))

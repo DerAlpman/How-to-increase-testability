@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using IncreasingTestabilityStepByStep;
+using IncreasingTestabilityStepByStep.Interfaces;
+using IncreasingTestabilityStepByStepTests.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IncreasingTestabilityStepByStepTests
@@ -87,6 +89,20 @@ namespace IncreasingTestabilityStepByStepTests
             StopwordsProvider stopwordsProvider = new StopwordsProvider("test_stopwords.txt");
             string[] stopwords = stopwordsProvider.Load();
             CollectionAssert.AreEqual(expected, stopwords);
+        }
+
+        /// <summary>
+        /// <para>Scaffolding test</para>
+        /// </summary>
+        [TestMethod]
+        public void TestWordcountWithStopwords()
+        {
+            IStopwordsProvider mockStopwordsProvider = new MockStopwordsProvider(new[] { "bc" });
+            WordsCounter wordCounter = new WordsCounter(mockStopwordsProvider);
+
+            int result = wordCounter.Count(new[] { "a", "bc", "def" });
+
+            Assert.AreEqual(2, result);
         }
     }
 }
