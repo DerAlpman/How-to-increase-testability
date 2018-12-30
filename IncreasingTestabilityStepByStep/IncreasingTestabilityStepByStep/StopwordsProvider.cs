@@ -25,6 +25,10 @@ namespace IncreasingTestabilityStepByStep
 
         public string[] Load()
         {
+            if (!File.Exists(this._Filename))
+            {
+                return new string[0];
+            }
             string[] stopwords = File.ReadAllLines(this._Filename);
 
             return stopwords;
