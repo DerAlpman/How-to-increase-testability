@@ -76,11 +76,16 @@ namespace IncreasingTestabilityStepByStepTests
             Assert.AreEqual(2, result);
         }
 
+        /// <summary>
+        /// <para>Scaffolding test</para>
+        /// </summary>
         [TestMethod]
         public void TestLoadStopwords()
         {
             string[] expected = new[] { "the", "a", "on", "off" };
-            string[] stopwords = Program.LoadStopwords();
+
+            StopwordsProvider stopwordsProvider = new StopwordsProvider("test_stopwords.txt");
+            string[] stopwords = stopwordsProvider.Load();
             CollectionAssert.AreEqual(expected, stopwords);
         }
     }
