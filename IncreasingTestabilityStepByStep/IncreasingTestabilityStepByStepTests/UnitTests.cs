@@ -52,7 +52,7 @@ namespace IncreasingTestabilityStepByStepTests
         {
             var expected = new[] { "Mary", "had", "a", "little", "lamb" };
             var result = Program.SplitByWhitespace(" Mary had  a little  lamb ");
-            Assert.AreEqual(expected.Length, result.Length);
+            CollectionAssert.AreEqual(expected, result);
         }
 
         /// <summary>
@@ -74,6 +74,14 @@ namespace IncreasingTestabilityStepByStepTests
         {
             var result = Program.CountWords(new[] { "hello", "the", "world", "off" });
             Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
+        public void TestLoadStopwords()
+        {
+            string[] expected = new[] { "the", "a", "on", "off" };
+            string[] stopwords = Program.LoadStopwords();
+            CollectionAssert.AreEqual(expected, stopwords);
         }
     }
 }

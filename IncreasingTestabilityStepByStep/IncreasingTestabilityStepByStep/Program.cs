@@ -43,5 +43,10 @@ namespace IncreasingTestabilityStepByStep
             string text = Console.ReadLine();
             return text;
         }
+
+        public static string[] LoadStopwords()
+        {
+            return File.ReadAllLines("stopwords.txt");
+        }
     }
 }
