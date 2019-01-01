@@ -1,4 +1,5 @@
 ﻿using IncreasingTestabilityStepByStep;
+using IncreasingTestabilityStepByStep.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace IncreasingTestabilityStepByStepTests
@@ -12,8 +13,11 @@ namespace IncreasingTestabilityStepByStepTests
         [TestMethod]
         public void TestDomainLogic()
         {
-            var result = Program.CountWords("Mary had a little lamb");
-            Assert.AreEqual(5, result);
+            IStopwordsProvider stopwordsProvider = new StopwordsProvider();
+            string[] stopwords = stopwordsProvider.Load();
+
+            var result = Program.CountWords("Mary had a little lamb", stopwords);
+            Assert.AreEqual(4, result);
         }
 
         /// <summary>
@@ -22,8 +26,11 @@ namespace IncreasingTestabilityStepByStepTests
         [TestMethod]
         public void TestDomainLogicWithMultipleWhitespaces()
         {
-            var result = Program.CountWords(" Mary had  a little  lamb ");
-            Assert.AreEqual(5, result);
+            IStopwordsProvider stopwordsProvider = new StopwordsProvider();
+            string[] stopwords = stopwordsProvider.Load();
+
+            var result = Program.CountWords(" Mary had  a little  lamb ", stopwords);
+            Assert.AreEqual(4, result);
         }
 
         /// <summary>

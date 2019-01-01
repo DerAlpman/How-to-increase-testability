@@ -1,6 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
+using IncreasingTestabilityStepByStep.Interfaces;
 
 namespace IncreasingTestabilityStepByStep
 {
@@ -8,23 +7,24 @@ namespace IncreasingTestabilityStepByStep
     {
         public static void Main(string[] args)
         {
+            IStopwordsProvider stopwordsProvider = new StopwordsProvider();
+            string[] stopwords = stopwordsProvider.Load();
+
             string text = AskForText();
-            int n = CountWords(text);
+            int n = CountWords(text, stopwords);
             DisplayWordCount(n);
         }
 
-        public static int CountWords(string text)
+        public static int CountWords(string text, string[] stopwords)
         {
             string[] words = SplitByWhitespace(text);
-            return CountWords(words);
+            return CountWords(words, stopwords);
         }
 
-        public static int CountWords(string[] words)
+        public static int CountWords(string[] words, string[] stopwords)
         {
-            StopwordsProvider stopwordsProvider = new StopwordsProvider();
-            var stopwords = stopwordsProvider.Load();
-            words = words.Except(stopwords).ToArray();
-            int n = words.Length;
+            WordsCounter wordsCounter = new WordsCounter(stopwords);
+            int n = wordsCounter.Count(words);
             return n;
         }
 
