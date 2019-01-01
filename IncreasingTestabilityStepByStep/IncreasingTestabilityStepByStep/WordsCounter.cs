@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using IncreasingTestabilityStepByStep.Interfaces;
 
 namespace IncreasingTestabilityStepByStep
 {
@@ -10,15 +9,15 @@ namespace IncreasingTestabilityStepByStep
     {
         #region FIELDS
 
-        private readonly IStopwordsProvider _StopwordsProvider;
+        private readonly string[] _Stopwords;
 
         #endregion
 
         #region Constructor
 
-        public WordsCounter(IStopwordsProvider stopwordsProvider)
+        public WordsCounter(string[] stopwords)
         {
-            this._StopwordsProvider = stopwordsProvider;
+            this._Stopwords = stopwords;
         }
 
         #endregion
@@ -32,8 +31,7 @@ namespace IncreasingTestabilityStepByStep
         /// <returns>Number of words not included in stopwords</returns>
         public int Count(string[] words)
         {
-            var stopwords = this._StopwordsProvider.Load();
-            words = words.Except(stopwords).ToArray();
+            words = words.Except(this._Stopwords).ToArray();
             var n = words.Length;
 
             return n;
