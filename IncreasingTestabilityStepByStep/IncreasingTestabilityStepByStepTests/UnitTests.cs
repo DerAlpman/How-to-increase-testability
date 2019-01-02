@@ -8,32 +8,6 @@ namespace IncreasingTestabilityStepByStepTests
     public class UnitTests
     {
         /// <summary>
-        /// <para>Acceptance test</para>
-        /// </summary>
-        [TestMethod]
-        public void TestDomainLogic()
-        {
-            IStopwordsProvider stopwordsProvider = new StopwordsProvider();
-            string[] stopwords = stopwordsProvider.Load();
-
-            var result = Program.CountWords("Mary had a little lamb", stopwords);
-            Assert.AreEqual(4, result);
-        }
-
-        /// <summary>
-        /// <para>Acceptance test</para>
-        /// </summary>
-        [TestMethod]
-        public void TestDomainLogicWithMultipleWhitespaces()
-        {
-            IStopwordsProvider stopwordsProvider = new StopwordsProvider();
-            string[] stopwords = stopwordsProvider.Load();
-
-            var result = Program.CountWords(" Mary had  a little  lamb ", stopwords);
-            Assert.AreEqual(4, result);
-        }
-
-        /// <summary>
         /// <para>Scaffolding test</para>
         /// </summary>
         [TestMethod]
