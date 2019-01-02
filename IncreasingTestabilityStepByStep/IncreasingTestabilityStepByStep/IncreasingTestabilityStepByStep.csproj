@@ -48,6 +48,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StopwordsProvider.cs" />
+    <Compile Include="UI.cs" />
     <Compile Include="WordsCounter.cs" />
   </ItemGroup>
   <ItemGroup>

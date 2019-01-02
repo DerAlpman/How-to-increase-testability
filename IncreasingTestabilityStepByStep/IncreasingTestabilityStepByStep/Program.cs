@@ -1,5 +1,4 @@
-﻿using System;
-using IncreasingTestabilityStepByStep.Interfaces;
+﻿using IncreasingTestabilityStepByStep.Interfaces;
 
 namespace IncreasingTestabilityStepByStep
 {
@@ -10,9 +9,9 @@ namespace IncreasingTestabilityStepByStep
             IStopwordsProvider stopwordsProvider = new StopwordsProvider();
             string[] stopwords = stopwordsProvider.Load();
 
-            string text = AskForText();
+            string text = UI.AskForText();
             int n = CountWords(text, stopwords);
-            DisplayWordCount(n);
+            UI.DisplayWordCount(n);
         }
 
         public static int CountWords(string text, string[] stopwords)
@@ -26,18 +25,6 @@ namespace IncreasingTestabilityStepByStep
             WordsCounter wordsCounter = new WordsCounter(stopwords);
             int n = wordsCounter.Count(words);
             return n;
-        }
-
-        public static void DisplayWordCount(int n)
-        {
-            Console.WriteLine($"Number of words: {n}");
-        }
-
-        public static string AskForText()
-        {
-            Console.Write($"Enter text:");
-            string text = Console.ReadLine();
-            return text;
         }
     }
 }
