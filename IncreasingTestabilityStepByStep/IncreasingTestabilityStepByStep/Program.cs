@@ -17,7 +17,7 @@ namespace IncreasingTestabilityStepByStep
 
         public static int CountWords(string text, string[] stopwords)
         {
-            string[] words = SplitByWhitespace(text);
+            string[] words = Parser.SplitByWhitespace(text);
             return CountWords(words, stopwords);
         }
 
@@ -26,11 +26,6 @@ namespace IncreasingTestabilityStepByStep
             WordsCounter wordsCounter = new WordsCounter(stopwords);
             int n = wordsCounter.Count(words);
             return n;
-        }
-
-        public static string[] SplitByWhitespace(string text)
-        {
-            return text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         public static void DisplayWordCount(int n)
